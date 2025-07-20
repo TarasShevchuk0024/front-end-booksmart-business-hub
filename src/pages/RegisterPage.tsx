@@ -10,11 +10,13 @@ import { Link } from 'react-router-dom';
 
 const RegisterPage = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    first_name: '',
+    last_name: '',
     email: '',
+    phone_number: '',
     password: '',
     confirmPassword: '',
-    role: 'USER'
+    type: 'USER'
   });
 
   const handleRegister = (e: React.FormEvent) => {
@@ -52,13 +54,26 @@ const RegisterPage = () => {
           <CardContent>
             <form onSubmit={handleRegister} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="name">Повне ім'я</Label>
+                <Label htmlFor="first_name">Ім'я</Label>
                 <Input
-                  id="name"
+                  id="first_name"
                   type="text"
-                  placeholder="Ваше повне ім'я"
-                  value={formData.name}
-                  onChange={(e) => handleInputChange('name', e.target.value)}
+                  placeholder="Ваше ім'я"
+                  value={formData.first_name}
+                  onChange={(e) => handleInputChange('first_name', e.target.value)}
+                  className="border-blue-200 focus:border-blue-400"
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="last_name">Прізвище</Label>
+                <Input
+                  id="last_name"
+                  type="text"
+                  placeholder="Ваше прізвище"
+                  value={formData.last_name}
+                  onChange={(e) => handleInputChange('last_name', e.target.value)}
                   className="border-blue-200 focus:border-blue-400"
                   required
                 />
@@ -72,6 +87,19 @@ const RegisterPage = () => {
                   placeholder="your@email.com"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
+                  className="border-blue-200 focus:border-blue-400"
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="phone_number">Номер телефону</Label>
+                <Input
+                  id="phone_number"
+                  type="tel"
+                  placeholder="+380501234567"
+                  value={formData.phone_number}
+                  onChange={(e) => handleInputChange('phone_number', e.target.value)}
                   className="border-blue-200 focus:border-blue-400"
                   required
                 />
@@ -106,8 +134,8 @@ const RegisterPage = () => {
               <div className="space-y-3">
                 <Label>Тип облікового запису</Label>
                 <RadioGroup 
-                  value={formData.role} 
-                  onValueChange={(value) => handleInputChange('role', value)}
+                  value={formData.type} 
+                  onValueChange={(value) => handleInputChange('type', value)}
                   className="flex space-x-6"
                 >
                   <div className="flex items-center space-x-2">
@@ -115,8 +143,8 @@ const RegisterPage = () => {
                     <Label htmlFor="user" className="text-sm">Клієнт</Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="BUSINESS" id="business" />
-                    <Label htmlFor="business" className="text-sm">Власник бізнесу</Label>
+                    <RadioGroupItem value="ADMIN" id="admin" />
+                    <Label htmlFor="admin" className="text-sm">Власник бізнесу</Label>
                   </div>
                 </RadioGroup>
               </div>

@@ -17,10 +17,10 @@ const BusinessDashboard = () => {
   ];
 
   const services = [
-    { id: 1, name: 'Чоловіча стрижка', duration: 30, price: 200, active: true },
-    { id: 2, name: 'Жіноча стрижка', duration: 45, price: 350, active: true },
-    { id: 3, name: 'Стрижка + борода', duration: 60, price: 300, active: true },
-    { id: 4, name: 'Фарбування', duration: 90, price: 800, active: false },
+    { id: 1, service_name: 'Чоловіча стрижка', duration_minutes: 30, price_eur: 200, active: true },
+    { id: 2, service_name: 'Жіноча стрижка', duration_minutes: 45, price_eur: 350, active: true },
+    { id: 3, service_name: 'Стрижка + борода', duration_minutes: 60, price_eur: 300, active: true },
+    { id: 4, service_name: 'Фарбування', duration_minutes: 90, price_eur: 800, active: false },
   ];
 
   const analytics = {
@@ -195,10 +195,10 @@ const BusinessDashboard = () => {
                   {services.map((service) => (
                     <div key={service.id} className="border border-gray-200 rounded-lg p-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h3 className="font-semibold text-gray-800">{service.name}</h3>
+                        <h3 className="font-semibold text-gray-800">{service.service_name}</h3>
                         <div className="flex items-center space-x-2">
                           <Badge variant="secondary" className="bg-green-100 text-green-800">
-                            {service.price} ₴
+                            {service.price_eur} ₴
                           </Badge>
                           <Badge 
                             variant={service.active ? 'default' : 'secondary'}
@@ -211,7 +211,7 @@ const BusinessDashboard = () => {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-2 text-sm text-gray-500">
                           <Clock className="w-4 h-4" />
-                          <span>{service.duration} хв</span>
+                          <span>{service.duration_minutes} хв</span>
                         </div>
                         <div className="flex space-x-2">
                           <Button size="sm" variant="outline" className="border-blue-200 text-blue-600">

@@ -11,10 +11,10 @@ const ClientDashboard = () => {
 
   // Mock data for demonstration
   const availableServices = [
-    { id: 1, name: 'Чоловіча стрижка', duration: 30, price: 200, business: 'Перукарня "Стиль"' },
-    { id: 2, name: 'Жіноча стрижка', duration: 45, price: 350, business: 'Салон "Красуня"' },
-    { id: 3, name: 'Заміна масла', duration: 60, price: 800, business: 'Автосервіс "Майстер"' },
-    { id: 4, name: 'Персональне тренування', duration: 90, price: 500, business: 'Фітнес "Енергія"' },
+    { id: 1, service_name: 'Чоловіча стрижка', duration_minutes: 30, price_eur: 200, business: 'Перукарня "Стиль"' },
+    { id: 2, service_name: 'Жіноча стрижка', duration_minutes: 45, price_eur: 350, business: 'Салон "Красуня"' },
+    { id: 3, service_name: 'Заміна масла', duration_minutes: 60, price_eur: 800, business: 'Автосервіс "Майстер"' },
+    { id: 4, service_name: 'Персональне тренування', duration_minutes: 90, price_eur: 500, business: 'Фітнес "Енергія"' },
   ];
 
   const myBookings = [
@@ -67,16 +67,16 @@ const ClientDashboard = () => {
                   {availableServices.map((service) => (
                     <div key={service.id} className="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
                       <div className="flex justify-between items-start mb-2">
-                        <h3 className="font-semibold text-gray-800">{service.name}</h3>
+                        <h3 className="font-semibold text-gray-800">{service.service_name}</h3>
                         <Badge variant="secondary" className="bg-green-100 text-green-800">
-                          {service.price} ₴
+                          {service.price_eur} ₴
                         </Badge>
                       </div>
                       <p className="text-sm text-gray-600 mb-2">{service.business}</p>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-2 text-sm text-gray-500">
                           <Clock className="w-4 h-4" />
-                          <span>{service.duration} хв</span>
+                          <span>{service.duration_minutes} хв</span>
                         </div>
                         <Button size="sm" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
                           Забронювати
