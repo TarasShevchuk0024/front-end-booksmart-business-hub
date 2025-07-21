@@ -1,0 +1,126 @@
+{
+  "app": {
+    "title": "BookEasy",
+    "description": "Booking system for small businesses"
+  },
+  "nav": {
+    "login": "Login",
+    "register": "Register",
+    "clientDashboard": "Client",
+    "businessDashboard": "Business"
+  },
+  "hero": {
+    "title": "Easy booking for your business",
+    "subtitle": "Streamline your small business service bookings with our intuitive platform.",
+    "clientCta": "Open Client Dashboard",
+    "businessCta": "Open Business Dashboard"
+  },
+  "features": {
+    "title": "Features",
+    "booking": {
+      "title": "Easy Booking",
+      "description": "Customers can easily book services online"
+    },
+    "scheduling": {
+      "title": "Smart Scheduling",
+      "description": "Automated schedule management and availability"
+    },
+    "analytics": {
+      "title": "Analytics",
+      "description": "Get insights about your business and customers"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "description": "Automatic reminders and updates"
+    }
+  },
+  "demo": {
+    "title": "Try our demo",
+    "subtitle": "Explore the functionality as a client or business owner",
+    "client": {
+      "title": "Client Interface",
+      "description": "Browse available services, book appointments, and manage your bookings.",
+      "cta": "View Client Dashboard"
+    },
+    "business": {
+      "title": "Business Interface",
+      "description": "Manage services, view bookings, and analyze business performance.",
+      "cta": "View Business Dashboard"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Login to your account",
+      "email": "Email",
+      "password": "Password",
+      "button": "Login",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create account",
+      "demoCredentials": "Demo accounts:"
+    },
+    "register": {
+      "title": "Create account",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "accountType": "Account Type",
+      "client": "Client",
+      "business": "Business",
+      "button": "Create Account",
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign in"
+    }
+  },
+  "dashboard": {
+    "client": {
+      "welcome": "Welcome, {{name}}!",
+      "services": "Available Services",
+      "bookings": "My Bookings",
+      "noServices": "No services available yet",
+      "noBookings": "You don't have any bookings yet",
+      "book": "Book",
+      "cancel": "Cancel",
+      "status": {
+        "pending": "Pending",
+        "confirmed": "Confirmed",
+        "cancelled": "Cancelled",
+        "completed": "Completed"
+      }
+    },
+    "business": {
+      "welcome": "Welcome to Business Dashboard!",
+      "services": "Your Services",
+      "bookings": "Bookings",
+      "addService": "Add Service",
+      "noServices": "You haven't added any services yet",
+      "noBookings": "No bookings yet",
+      "serviceName": "Service Name",
+      "duration": "Duration (minutes)",
+      "price": "Price (€)",
+      "save": "Save",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "confirm": "Confirm",
+      "reject": "Reject"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "language": "Language"
+  },
+  "footer": {
+    "copyright": "© 2024 BookEasy. All rights reserved.",
+    "description": "Project created with ❤️ for small businesses"
+  }
+}

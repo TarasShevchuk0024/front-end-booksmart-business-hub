@@ -1,0 +1,126 @@
+{
+  "app": {
+    "title": "BookEasy",
+    "description": "Buchungssystem für kleine Unternehmen"
+  },
+  "nav": {
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "clientDashboard": "Kunde",
+    "businessDashboard": "Unternehmen"
+  },
+  "hero": {
+    "title": "Einfache Buchung für Ihr Unternehmen",
+    "subtitle": "Vereinfachen Sie die Servicebuchungen Ihres kleinen Unternehmens mit unserer intuitiven Plattform.",
+    "clientCta": "Kunden-Dashboard öffnen",
+    "businessCta": "Unternehmens-Dashboard öffnen"
+  },
+  "features": {
+    "title": "Funktionen",
+    "booking": {
+      "title": "Einfache Buchung",
+      "description": "Kunden können Services einfach online buchen"
+    },
+    "scheduling": {
+      "title": "Intelligente Terminplanung",
+      "description": "Automatisierte Terminverwaltung und Verfügbarkeit"
+    },
+    "analytics": {
+      "title": "Analysen",
+      "description": "Erhalten Sie Einblicke in Ihr Unternehmen und Ihre Kunden"
+    },
+    "notifications": {
+      "title": "Benachrichtigungen",
+      "description": "Automatische Erinnerungen und Updates"
+    }
+  },
+  "demo": {
+    "title": "Probieren Sie unsere Demo",
+    "subtitle": "Erkunden Sie die Funktionalität als Kunde oder Geschäftsinhaber",
+    "client": {
+      "title": "Kunden-Interface",
+      "description": "Durchsuchen Sie verfügbare Services, buchen Sie Termine und verwalten Sie Ihre Buchungen.",
+      "cta": "Kunden-Dashboard anzeigen"
+    },
+    "business": {
+      "title": "Unternehmens-Interface",
+      "description": "Verwalten Sie Services, sehen Sie Buchungen ein und analysieren Sie die Unternehmensleistung.",
+      "cta": "Unternehmens-Dashboard anzeigen"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "In Ihr Konto einloggen",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "button": "Anmelden",
+      "forgotPassword": "Passwort vergessen?",
+      "noAccount": "Haben Sie kein Konto?",
+      "createAccount": "Konto erstellen",
+      "demoCredentials": "Demo-Konten:"
+    },
+    "register": {
+      "title": "Konto erstellen",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "password": "Passwort",
+      "confirmPassword": "Passwort bestätigen",
+      "accountType": "Kontotyp",
+      "client": "Kunde",
+      "business": "Unternehmen",
+      "button": "Konto erstellen",
+      "hasAccount": "Haben Sie bereits ein Konto?",
+      "signIn": "Anmelden"
+    }
+  },
+  "dashboard": {
+    "client": {
+      "welcome": "Willkommen, {{name}}!",
+      "services": "Verfügbare Services",
+      "bookings": "Meine Buchungen",
+      "noServices": "Noch keine Services verfügbar",
+      "noBookings": "Sie haben noch keine Buchungen",
+      "book": "Buchen",
+      "cancel": "Stornieren",
+      "status": {
+        "pending": "Ausstehend",
+        "confirmed": "Bestätigt",
+        "cancelled": "Storniert",
+        "completed": "Abgeschlossen"
+      }
+    },
+    "business": {
+      "welcome": "Willkommen im Unternehmens-Dashboard!",
+      "services": "Ihre Services",
+      "bookings": "Buchungen",
+      "addService": "Service hinzufügen",
+      "noServices": "Sie haben noch keine Services hinzugefügt",
+      "noBookings": "Noch keine Buchungen",
+      "serviceName": "Service-Name",
+      "duration": "Dauer (Minuten)",
+      "price": "Preis (€)",
+      "save": "Speichern",
+      "cancel": "Abbrechen",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "confirm": "Bestätigen",
+      "reject": "Ablehnen"
+    }
+  },
+  "common": {
+    "loading": "Lädt...",
+    "error": "Ein Fehler ist aufgetreten",
+    "success": "Erfolgreich",
+    "close": "Schließen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "submit": "Absenden",
+    "language": "Sprache"
+  },
+  "footer": {
+    "copyright": "© 2024 BookEasy. Alle Rechte vorbehalten.",
+    "description": "Projekt erstellt mit ❤️ für kleine Unternehmen"
+  }
+}
