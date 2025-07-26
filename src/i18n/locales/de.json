@@ -76,8 +76,14 @@
       "client": "Kunde",
       "business": "Unternehmen",
       "button": "Konto erstellen",
+      "loading": "Konto wird erstellt...",
       "hasAccount": "Haben Sie bereits ein Konto?",
-      "signIn": "Anmelden"
+      "signIn": "Anmelden",
+      "success": "Registrierung erfolgreich",
+      "successMessage": "Ihr Konto wurde erfolgreich erstellt!",
+      "error": "Registrierungsfehler",
+      "errorMessage": "Konto konnte nicht erstellt werden. Bitte versuchen Sie es erneut.",
+      "passwordMismatch": "Passwörter stimmen nicht überein"
     }
   },
   "dashboard": {

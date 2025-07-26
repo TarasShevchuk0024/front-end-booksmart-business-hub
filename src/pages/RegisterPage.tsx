@@ -7,11 +7,15 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Calendar } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { apiService } from '@/services/api';
+import { toast } from '@/hooks/use-toast';
 
 const RegisterPage = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -22,9 +26,56 @@ const RegisterPage = () => {
     type: 'USER'
   });
 
-  const handleRegister = (e: React.FormEvent) => {
+  const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Register attempt:', formData);
+    
+    if (formData.password !== formData.confirmPassword) {
+      toast({
+        title: t('auth.register.error'),
+        description: t('auth.register.passwordMismatch'),
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+    
+    try {
+      const registerData = {
+        firstName: formData.first_name,
+        lastName: formData.last_name,
+        email: formData.email,
+        phoneNumber: formData.phone_number,
+        password: formData.password,
+        type: (formData.type === 'USER' ? 'CLIENT' : 'BUSINESS_OWNER') as 'CLIENT' | 'BUSINESS_OWNER'
+      };
+
+      const response = await apiService.register(registerData);
+      
+      if (response.token) {
+        localStorage.setItem('auth_token', response.token);
+        toast({
+          title: t('auth.register.success'),
+          description: t('auth.register.successMessage'),
+        });
+        
+        // Redirect based on user type
+        if (formData.type === 'USER') {
+          navigate('/client-dashboard');
+        } else {
+          navigate('/business-dashboard');
+        }
+      }
+    } catch (error) {
+      console.error('Registration error:', error);
+      toast({
+        title: t('auth.register.error'),
+        description: t('auth.register.errorMessage'),
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -159,9 +210,10 @@ const RegisterPage = () => {
 
               <Button 
                 type="submit" 
+                disabled={isLoading}
                 className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
               >
-                {t('auth.register.button')}
+                {isLoading ? t('auth.register.loading') : t('auth.register.button')}
               </Button>
             </form>
 

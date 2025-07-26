@@ -76,8 +76,14 @@
       "client": "Client",
       "business": "Business",
       "button": "Create Account",
+      "loading": "Creating account...",
       "hasAccount": "Already have an account?",
-      "signIn": "Sign in"
+      "signIn": "Sign in",
+      "success": "Registration successful",
+      "successMessage": "Your account has been created successfully!",
+      "error": "Registration error",
+      "errorMessage": "Failed to create account. Please try again.",
+      "passwordMismatch": "Passwords do not match"
     }
   },
   "dashboard": {
