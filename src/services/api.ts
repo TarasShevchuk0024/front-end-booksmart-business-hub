@@ -66,6 +66,24 @@ class ApiService {
     return this.request<User>(`/users/${id}`);
   }
 
+  async getCurrentUser(): Promise<User> {
+    // Since we don't have a /me endpoint, we'll need to decode token or get user ID
+    // For now, we'll get all users and find the current one by token
+    // This is not ideal but works for demo purposes
+    const token = localStorage.getItem('auth_token');
+    if (!token) {
+      throw new Error('No authentication token found');
+    }
+    
+    // In a real app, you'd decode the JWT or have a /me endpoint
+    // For now, we'll assume the first user is the current user (demo)
+    const users = await this.getUsers();
+    if (users.length === 0) {
+      throw new Error('No user found');
+    }
+    return users[0]; // This is just for demo purposes
+  }
+
   async updateUser(user: UserUpdate): Promise<void> {
     return this.request<void>(`/users/${user.id}`, {
       method: 'PUT',

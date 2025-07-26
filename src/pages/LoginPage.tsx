@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -8,16 +9,49 @@ import { Label } from '@/components/ui/label';
 import { Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { apiService } from '@/services/api';
+import { useToast } from '@/hooks/use-toast';
 
 const LoginPage = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { toast } = useToast();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Mock login logic
-    console.log('Login attempt:', { email, password });
+    setIsLoading(true);
+    
+    try {
+      const response = await apiService.login({ email, password });
+      localStorage.setItem('auth_token', response.token);
+      
+      // Get current user info to determine dashboard
+      const userInfo = await apiService.getCurrentUser();
+      
+      toast({
+        title: t('auth.login.success'),
+        description: t('auth.login.welcome'),
+      });
+      
+      // Navigate based on user type
+      if (userInfo.type === 'BUSINESS_OWNER') {
+        navigate('/business-dashboard');
+      } else {
+        navigate('/client-dashboard');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      toast({
+        title: t('auth.login.error'),
+        description: t('auth.login.invalidCredentials'),
+        variant: 'destructive',
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -78,9 +112,10 @@ const LoginPage = () => {
 
               <Button 
                 type="submit" 
+                disabled={isLoading}
                 className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
               >
-                {t('auth.login.button')}
+                {isLoading ? t('auth.login.loading') : t('auth.login.button')}
               </Button>
             </form>
 

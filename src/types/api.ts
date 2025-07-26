@@ -2,33 +2,31 @@
 
 export interface User {
   id: string;
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  phone_number: string;
-  type: 'USER' | 'ADMIN';
-  status: 'ACTIVE' | 'BLOCKED' | 'PENDING';
-  created_at?: string;
-  updated_at?: string;
+  phoneNumber: string;
+  type: 'CLIENT' | 'BUSINESS_OWNER' | 'ADMIN';
+  status: 'ACTIVE' | 'INACTIVE' | 'BLOCKED';
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface UserCreate {
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  phone_number: string;
+  phoneNumber: string;
   password: string;
-  type: 'USER' | 'ADMIN';
+  type: 'CLIENT' | 'BUSINESS_OWNER';
 }
 
 export interface UserUpdate {
   id: string;
-  first_name: string;
-  last_name: string;
-  email: string;
-  phone_number: string;
-  type: 'USER' | 'ADMIN';
-  status: 'ACTIVE' | 'BLOCKED' | 'PENDING';
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  phoneNumber?: string;
 }
 
 export interface Business {
