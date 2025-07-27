@@ -10,12 +10,11 @@ import { Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { apiService } from '@/services/api';
-import { useToast } from '@/hooks/use-toast';
+import { toast } from '@/hooks/use-toast';
 
 const LoginPage = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { toast } = useToast();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
