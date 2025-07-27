@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 const Index = () => {
+  console.log('Index component rendering');
   const { t } = useTranslation();
 
   return (

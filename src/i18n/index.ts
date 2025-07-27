@@ -6,6 +6,8 @@ import en from './locales/en.json';
 import uk from './locales/uk.json';
 import de from './locales/de.json';
 
+console.log('i18n loading...');
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -24,6 +26,12 @@ i18n
       order: ['localStorage', 'navigator', 'htmlTag'],
       caches: ['localStorage'],
     },
+  })
+  .then(() => {
+    console.log('i18n initialized successfully');
+  })
+  .catch((err) => {
+    console.error('i18n initialization failed:', err);
   });
 
 export default i18n;
